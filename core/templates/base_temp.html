@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{% endblock %}</title>
+<script src={% static "paypal-objects/vx-lib.js" %}></script>
+<link rel="stylesheet" href="{% static "paypal-objects/vx-lib.css" %}">
+<link rel="stylesheet" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css"%}">
+<link rel="stylesheet" href="{% static "css/app.css" %}">
+<link rel="stylesheet" href="{% static "css/app-scorebot.css" %}">
+    {% block extrastyle %}{% endblock %}
+<style>
+    div.content {
+        margin-left: 10%;
+        padding: 1px 16px;
+        width: 80%;
+        margin-top: 75px;
+    }
+
+    #submit_text{
+        font-size:0.925rem;
+        text-align:center;
+        padding-left:15%;
+    }
+
+    @media screen and (max-width: 768px) {
+        div.content {
+             margin-left: 6%;
+         }
+        #create-exemption{
+            padding-top: 20px;
+        }
+        #description, #id_framework, #id_reason, .vx_floatingLabel{
+            margin-top: 2px;
+        }
+        .pr-url-row, .commit-id-row, .reason-row{
+            margin-top:15px;
+        }
+        #submit_text{
+            padding-left: 5%;
+        }
+    }
+</style>
+</head>
+<body>
+   <header>
+    <h2 class="header-title" style="margin-top:15px;text-align:center;padding-left:0px;">{% block header %}{% endblock %}</h2>
+    <p class="vx_text-body-md" id="help-slack" style="right:69px;">{% block slack %}{% endblock %}</p>
+    <button class="vx_btn vx_btn_reversed vx_btn-small" id="login">Login</button>
+  </header>
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+<script src={% static "js/app.js" %}></script>
+   {% block extrascript %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,170 @@
+label{
+  margin-right:20px;
+}
+
+textarea{
+  font-size:0.85rem;
+  line-height:1.2rem; 
+}
+
+#form-label {
+  width:15%;
+}
+
+#help-slack{
+  position: absolute; 
+  right: 135px;
+  top:8px;
+}
+
+#login{
+  display:none;
+}
+
+#id_description{
+  width:100%;
+  height:150px;
+}
+
+#id_reason{
+  margin-top:15px;
+}
+
+#description{
+  margin-top:15px;
+  border:hidden;
+}
+
+.exemption-header{
+  margin-top:-10px;
+}
+
+.exemption-title{
+  margin-top:-20px;
+}
+
+#scorebot-title{
+  text-align:center;
+  margin-top:25px;
+  padding-left:0;
+  margin-bottom:-15px;
+}
+
+#scorebot-subtitle{
+  text-align: center;
+  margin-bottom:20px;
+}
+
+.scorebot-submit{
+  text-align:center;
+}
+
+#alerts {
+  margin-bottom:30px;
+}
+
+#create-exemption{
+  font-size: 1.1rem; 
+  margin: 10px 0 0 0;
+}
+
+#create-exemption-details{
+  font-size: 1.1rem; 
+  margin: 0 0 0 0;"
+}
+
+.vx_alert_inline vx_alert-success{
+  float:right;
+
+}
+         
+.vx_floatingLabel input.vx_form-control{
+  z-index:0;
+}
+
+.vx_form-control, .vx_floatingLabel{
+  background-color:#f5fbfe;
+}
+
+.vx_floatingLabel:before, .vx_floatingLabel_complex:before, .vx_floatingLabel_active:before,
+.vx_floatingLabel:after, .vx_floatingLabel_complex:after, .vx_floatingLabel_active:after,
+.vx_floatingLabel.vx_floatingLabel_complex > .vx_form-control:before,
+.vx_floatingLabel_complex.vx_floatingLabel_complex > .vx_form-control:before,
+.vx_floatingLabel_active.vx_floatingLabel_complex > .vx_form-control:before,
+.vx_floatingLabel.vx_floatingLabel_complex > .vx_form-control:after,
+.vx_floatingLabel_complex.vx_floatingLabel_complex > .vx_form-control:after,
+.vx_floatingLabel_active.vx_floatingLabel_complex > .vx_form-control:after {
+  padding: 17px 15px 0 15px;
+  line-height: 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+  *, *:before, *:after {
+    box-sizing: initial;
+  }
+  input{
+    text-overflow: ellipsis;
+  }
+  #top-header {
+    text-align: center;
+    padding-left: 0;
+  }
+  .vx_floatingLabel input.vx_form-control{
+    z-index:0;
+    height:40px;
+    padding-top:18px;
+    padding-left:10px;
+    padding-right:0;
+  }
+
+  #home-corner{
+    height:35px;
+  }
+
+  .fa-caret-down{
+    float:none;
+    padding-left:45px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #id_framework, #id_reason{
+    width:103%;
+  }
+
+  #id_pull_request_url, #id_commit_id {
+    width: 101%;
+  }
+  #id_description{
+    width:99%;
+  }
+  .framework-row, .pr-url-row, .commit-id-row, .reason-row, .description-row{
+  display: grid;
+  }
+  #form-label{
+    width:80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #id_framework, #id_reason{
+    width:103%;
+    max-width:500px;
+  }
+
+  #id_pull_request_url, #id_commit_id {
+    width: 100%;
+    max-width:500px;
+  }
+  #id_description{
+    width:97%;
+    max-width:500px;
+  }
+  .framework-row, .pr-url-row, .commit-id-row, .reason-row, .description-row{
+    display: grid;
+  }
+  #form-label{
+    width:80%;
+  }
+}
+        

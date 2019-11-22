@@ -1,0 +1,97 @@
+{% extends "base_temp.html" %}
+{% load staticfiles %}
+
+{% block title %}SCORE Bot Exemption{% endblock %}
+
+{% block extrastyle %}{% endblock %}
+
+{% block header %}SCORE Bot Get Exemption{% endblock %}
+
+{% block content %}
+    <div class="exemption-header">
+        <p class="vx_text-2" id="scorebot-title">
+            Welcome to SCORE Bot{{ firstname }}!</p>
+        <p class="vx_text-4" id="scorebot-subtitle">
+            Your friendly neighborhood automated Secure COde REview bot</p>
+    </div>
+    <div class="exemption errors" id="alerts">
+        {% if messages %}
+            <div class="vx_alert_inline vx_alert-success">
+                {% for message in messages %}
+                    <p class="vx_alert-text">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if form.description.errors or form.pull_request_url.errors or form.commit_id.errors %}
+            <div class="vx_alert vx_alert-warning">
+                <p class="vx_alert-text">Please fill out all fields</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="exemption-title">
+          <p class="vx_text-3" id="create-exemption">Create Exemption Request</p>
+          <p class="vx_text-4" id="create-exemption-details">Fill out the pull request related details
+              for which an exemption is requested:</p>
+    </div>
+        
+    <form action={{ redirect_url }} method="post">
+        {% csrf_token %}
+        <table> 
+        <tr class = "framework-row">
+          <div class="vx_form-group">
+            <td id="form-label">
+              <label for="select">{{ form.framework.label_tag }}</label>
+            </td>
+            <td>
+              {{ form.framework }}
+            </td>
+          </div>
+        </tr>
+        <tr class = "pr-url-row">
+          <td>
+            {{ form.pull_request_url.label_tag }}
+          </td>
+          <td>
+            <div class="vx_floatingLabel" data-label-content="Pull Request URL">
+                {{ form.pull_request_url }}
+            </div>
+          </td>
+        </tr>
+        <tr class = "commit-id-row">
+          <td>
+            {{ form.commit_id.label_tag }}
+          </td>
+          <td>
+            <div class="vx_floatingLabel" data-label-content="Commit ID for which the exemption is requested">
+              {{ form.commit_id }}
+            </div>
+          </td>
+        </tr>
+        <tr class = "reason-row">
+          <div class="vx_form-group">
+            <td>
+              <label for="select">{{ form.reason.label_tag }}</label>
+            </td>
+            <td>
+              {{ form.reason }}
+            </td>
+          </div>
+        </tr>
+        <tr class = "description-row">
+          <td>{{ form.description.label_tag }}</td>
+          <td>
+              <div class="vx_form-control vx_form-control_complex" id="description">
+                  {{ form.description }}
+                </div>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <div class="scorebot-submit">
+        <p class="vx_text-4" id="submit_text">Once request is submitted, the
+            commit ID will be marked from failure to success.</p>
+        <input type="submit" value="Create Exemption" class="vx_btn vx_btn-medium" id="form_submit"/>
+      </div>
+    </form>
+
+{% endblock %}

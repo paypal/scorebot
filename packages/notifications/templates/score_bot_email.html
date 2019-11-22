@@ -1,0 +1,43 @@
+{% extends "score_bot_email_base.html" %}
+{% load markup_tags %}
+{% block body_block %}
+    <style>
+    table tr td {
+        padding: 2px;
+    }
+    </style>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td>GitHub Pull Request: {{ pull_request }}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>GitHub Pull Request Owner: {{ owner }}</td>
+        </tr>
+        {% for entry in message %}
+            <tr>
+                {% if entry|slice:":1" ==  "*" %}
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ entry|linebreaks }}</td>
+                {% elif entry|slice:":4" ==  "Rule" %}
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entry|linebreaks }}</td>
+                {% else %}
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ entry|apply_markup:"textile" }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Thanks,<br>SCORE Bot</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+{% endblock body_block %}

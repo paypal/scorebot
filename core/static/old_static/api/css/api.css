@@ -1,0 +1,31 @@
+.home_body {
+    min-height: 200px;
+    padding-top: 70px;
+}
+
+.table_body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.active_col {
+    width: 10%;
+}
+
+.table_block {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.navbar {
+    min-height: 70px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}

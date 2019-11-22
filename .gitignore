@@ -1,0 +1,13 @@
+*~
+*.idea
+*.log*
+*.out
+*.pid
+*.pyc
+*.pyd
+*.pyo
+/static/
+scorebot_vars.sh
+.tmp/
+/scorebot2/
+saml/

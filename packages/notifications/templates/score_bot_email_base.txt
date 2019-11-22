@@ -1,0 +1,5 @@
+
+  {% block body_block %}
+  {% endblock body_block %}
+  -------------------------------------------------------------------------------------------
+  SCORE Bot Support: {{ support_dl }}

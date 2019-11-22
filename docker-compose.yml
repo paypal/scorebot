@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    container_name: scorebot-service
+    environment:
+      - PYTHONUNBUFFERED=0
+    tty: true
+    stdin_open: true
+    ports:
+      - "8025:8025"
+    volumes:
+      - .:/x/local/scorebot/scorebot-service

@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'PayPal-Sans', Helvetica Neue, Arial, sans-serif;
+  background-color: #f5fbfe;
+
+}
+/* header */
+header {
+  position: fixed;
+  top:0px; 
+  width: 100%; 
+  background-color: #f1f1f1;
+  background-image: linear-gradient(190deg, #009cde, #003087);
+  height: 69px;
+  z-index:1;
+}
+
+h2, .vx_text-2{
+  padding-left: 220px;
+  margin-top: 0px;
+  }
+
+#help-slack{
+  position: absolute; 
+  right: 135px;
+  top:8px;
+}
+
+/* sidebar */
+.sidebar {
+  box-shadow: 4px 4px 4px grey;
+  width: 200px;
+  background-color: #2c2e2f;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  /* dropdown */
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar .icon{
+  display: none;
+}
+
+.sidebar .close{
+  display: none;
+}
+.sidebar a.active {
+  background-color: #0070ba;
+  color: white;
+  padding-left: 10px;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #b7bcbf;
+  color: white;
+}
+
+/* body */
+div.content {
+  margin-left: 220px;
+  padding: 1px 16px;
+  width: 80%;
+  margin-top: 75px;
+}
+
+.overlay {
+  position: fixed;
+  display: none; 
+  width: 100%;
+  height: 100%;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1; 
+  cursor: pointer; 
+}
+
+/* dropdown */
+.sidebar a, .dropdown-btn {
+  padding: 13px 10px 13px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #cbd2d6;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.sidebar a:hover, .dropdown-btn:hover {
+  color: #cbd2d6;
+  background-color: #b7bcbf;
+}
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* random stuff*/
+
+.header-title {
+  color:white;
+}
+.icon {
+  color:white;
+}
+
+#help-slack {
+  color:white;
+}
+
+#login{
+  position: absolute; 
+  right: 20px;
+  top: 20px;  
+}
+
+#home-corner{
+  height: 69px; 
+  padding-top: 20px;
+}
+
+#close-button{
+  margin-top: 30px;
+  margin-left:70px;
+}
+
+/*screen changes*/
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none;
+  }
+
+  .fa-bars {
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 8px;
+    font-size: x-large;
+  }
+
+  div.content{
+    margin-left: 20px;
+    padding: 1px 16px;
+    height: 1000px;
+    margin-top: 75px;
+  }
+  h2, .vx_text-2{
+  padding-left: 65px;
+  margin-top: 0px;
+  }
+
+  #help-slack {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar.responsive {
+    display: block;
+  }
+  .sidebar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .sidebar.responsive .dropdown-container {position: relative;}
+  .sidebar.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .sidebar.responsive .close{
+    display: block;
+  }
+  .overlay.responsive{
+    display: block;
+  }
+}
+@media (max-width: 768px){
+  body {
+    background-color: #f5fbfe;
+    background-image: none;
+  }
+}

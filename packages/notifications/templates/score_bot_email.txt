@@ -1,0 +1,16 @@
+{% extends "score_bot_email_base.txt" %}
+{% block body_block %}
+    GitHub Pull Request:
+
+    {{ pull_request }}
+
+    GitHub Pull Request Owner:
+
+    {{ owner }}
+
+    {% for entry in message %}
+    {{ entry }}{% endfor %}
+
+    Thanks,
+    SCORE Bot
+{% endblock body_block %}

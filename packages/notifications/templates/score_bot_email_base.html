@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ email_subject }}</title>
+    <style type="text/css">
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+        a img {
+            border: none;
+        }
+        p {
+            margin: 1em 0;
+        }
+        table thead {
+			border-collapse: collapse;
+			background:#1F497D;
+			padding:0 5.4pt 0 5.4pt;
+			font-size:14.0pt;
+			color:white;
+        }
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+    </style>
+</head>
+<body>
+<table cellpadding="10" cellspacing="0" border="0" id="backgroundTable">
+    <tr>
+        <td>{% block body_block %}
+            {% endblock body_block %}
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td><hr/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <br>SCORE Bot Support: <a
+                            href="mailto:{{ support_dl }}?subject={{ email_subject }}">{{ support_dl }}</a></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;<br/>&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

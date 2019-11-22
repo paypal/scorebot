@@ -1,0 +1,58 @@
+{
+    "strict": false,
+    "debug": true,
+    "sp": {
+        "entityId": "<entity_id>",
+        "assertionConsumerService": {
+            "url": "https://<host>/saml/acs",
+            "binding": "urn:oasis:names:tc:SAML:2.0:metadata"
+        },
+        "singleLogoutService": {
+            "url": "https://<host>/saml/acs",
+            "binding": "urn:oasis:names:tc:SAML:2.0:metadata"
+        },
+        "NameIDFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+        "x509cert": "publicCert.pem",
+        "privateKey": "private.pem"
+    },
+    "idp": {
+        "entityId": "<url>",
+        "singleSignOnService": {
+            "url": "<url>",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        },
+        "singleLogoutService": {
+            "url": "<url>",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        },
+        "x509cert": "idp cert"
+    },    "security": {
+        "nameIdEncrypted": false,
+        "authnRequestsSigned": true,
+        "logoutRequestSigned": false,
+        "logoutResponseSigned": false,
+        "signMetadata": true,
+        "wantMessagesSigned": false,
+        "wantAssertionsSigned": true,
+        "wantNameId" : true,
+        "wantNameIdEncrypted": false,
+        "signatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+    },
+    "contactPerson": {
+        "technical": {
+            "givenName": "<name>",
+            "emailAddress": "<email_address>"
+        },
+        "support": {
+            "givenName": "<name>",
+            "emailAddress": "<email_address>"
+        }
+    },
+    "organization": {
+        "en-US": {
+            "name": "<organization_name>",
+            "displayname": "<organization_display_name>",
+            "url": "<organization_url>"
+        }
+    }
+}
