@@ -2,27 +2,24 @@
 An automated way to perform Secure COde REview
 
 ## Introduction
-This bot helps identify potential security vulnerabilities during code review and provides feedback in the 
-Pull Request (PR) on potential impacts and secure ways to fix the issues.
+This bot is designed to help identify potential security vulnerabilities during code review and provide feedback in the 
+Pull Request (PR) on potential impact and secure ways to fix the them.
 
-One of the performing states of this automated system is to feed domain code owners and security teams information 
-on identified vulnerable code and the potential solutions to fix them.
+One of the performing states of this automated system is to feed code contributers, owners & security teams information 
+on identified vulnerable code.
 
-In addition, various metadata collected in the process of identifying vulnerable code will provide insights to fine-tune 
-security programs (including trainings for targeted audience) and help teach various aspects of specific categories of 
-insecure coding and how to avoid them.
+In addition, various metadata collected in the process of identifying vulnerable code will provide insight to fine tune 
+security programs (including trainings for targeted audience) and help learn various aspects of specific categories of 
+vaulnerabilities.
 
-SCORE Bot kicks in when the PR is issued (after the webhook is set up for the repository) and performs the checks as 
-configured. Commenting in the PR, sending an email to the coder/reviewer can be performed as well.
+SCORE Bot kicks in when the PR is issued (after the webhook is set up for the repository or integrated with CI/CD pipeline) and performs checks as configured. Commenting in the PR, sending an email to the contributer & reviewer can be performed as well.
 
 ## Goals
-1. Identify insecure code at the time of development, before the code is integrated.
-2. Provide guidance to domain code owners to identify and fix potential security vulnerabilities during development
-phase.
-3. Keep security teams informed about the various security mistakes that are committed during development
-4. Enable programs to identify insecure coding practices much earlier in the game
-5. Provide guidance to Secure Product Lifecycle (SPLC) processes to target specific training for specific audience for 
-specific categories of insecure coding practices.
+1. Identify insecure code at the time of development, before the code is integrated
+2. Provide guidance to code contributers & owners to identify and fix potential security vulnerabilities during development
+3. Keep security teams informed about the various potential vulnerabilities that are committed during development
+4. Enable organizational security programs to identify insecure code much earlier in SDLC
+5. Provife data to enable targeted & effective training for code communities for specific categories of insecure coding practices.
 
 
 ## Modes
@@ -34,14 +31,10 @@ No PR comments, no emails sent. This mode is useful while integrating a new use 
 Developers will be completely transparent to this.
 
 ### Notify Mode
-In this mode, in addition to recording metrics, SCORE Bot will perform notification by commenting in the PR and sending
-emails to developers.
+In this mode, in addition to recording metrics, SCORE Bot will notify in the PR and can be configured to send emails to code contributers.
 
 ### Enforce Mode
-In this mode, SCORE Bot will record metrics on each commit and submit a status check, perform notification by commenting
-in the PR and sending email to developers. If any vulnerabilities are found, the status check will fail and in order to
-pass the check, developers will need to fix the issue or submit an exemption request. This mode is useful for higher
-priority security use cases where enforcing use cases is necessary.
+In this mode, SCORE Bot will record metrics on each commit and submit a status check, notigy in the PR and send email to code contributers. If any vulnerabilities are found, the status check will fail. This mode is useful for priority security use cases where enforcing is necessary.
 
 ## Setup
 ### MySQL Database
