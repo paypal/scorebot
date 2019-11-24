@@ -1,40 +1,30 @@
 # SCORE Bot
-An automated way to perform Secure COde REview
-
+SCORE Bot stands for Secure Code Review Bot. To learn more about the philosophy, guiding principles and lessons learned from our own deployment at PayPal, watch this AppSec USA talk: https://www.youtube.com/watch?v=4rjmtdvrGrg
+ 
 ## Introduction
-This bot is designed to help identify potential security vulnerabilities during code review and provide feedback in the 
-Pull Request (PR) on potential impact and secure ways to fix the them.
-
-One of the performing states of this automated system is to feed code contributors, owners & security teams information 
-on identified vulnerable code.
-
-In addition, metadata collected in the process of identifying vulnerable code will provide insight to fine tune 
-security programs (including trainings for targeted audience) and help learn various aspects of specific categories of 
-vulnerabilities.
-
-SCORE Bot kicks in when the PR is issued (after the webhook is set up for the repository or integrated with CI/CD pipeline) and performs checks as configured. Commenting in the PR, sending an email to the contributor & reviewer can be performed as well.
-
+This bot is designed to help identify potential security vulnerabilities during code review and surface that to developers via Pull Request (PR) comments.
+ 
+The comments can be customized to include details about the vulnerability, its impact and also remediation guidance. The bot is language agnostic and the best use-case is to identify vulnerabilities in your own organization-specific custom frameworks, libraries, etc. We have provided a simple generic rule as an example with which you can model your own rules.
+  
+In addition, metadata/metrics collected in the process of identifying vulnerable code can provide insights which can then be actioned by the AppSec team (targeted training for example).
+  
 ## Goals
 1. Identify insecure code at the time of development, before the code is integrated
 2. Provide guidance to code contributors & owners to identify and fix potential security vulnerabilities during development
-3. Keep security teams informed about the various potential vulnerabilities that are committed during development
-4. Enable organizational security programs to identify insecure code much earlier in SDLC
-5. Provide data to enable targeted & effective training for code communities for specific categories of insecure coding practices.
-
-
+3. Keep security teams abreast with actionable insights into vulnerabilities that are committed during development
+ 
 ## Modes
-SCORE Bot use cases can be run in the following three modes:
-
+SCORE Bot checks can be run in the following three modes:
+ 
 ### Silent Mode
-In this mode, SCORE Bot will record metrics for any use case without sending any notifications. 
-No PR comments, no emails will be sent. This mode is useful while integrating a new use case with SCORE Bot. 
-Developers will be completely transparent to this.
-
+In this mode, SCORE Bot will record metrics for any vulnerability it detects without sending any notifications.
+No PR comments or emails will be sent. This mode is useful while integrating a new check with SCORE Bot to figure out false positives, tune the rules, etc.
+ 
 ### Notify Mode
-In this mode, in addition to recording metrics, SCORE Bot will notify in the PR and can be configured to send emails to code contributors.
-
+In this mode, SCORE Bot will notify about the vulnerabilities (in addition to recoding the metrics) it detects in the PR and it can also be configured to send emails to code contributors.
+ 
 ### Enforce Mode
-In this mode, SCORE Bot will record metrics on each commit and submit a status check, notify in the PR and send email to code contributors. If any vulnerabilities are found, the status check will fail. This mode is useful for priority security use cases where enforcing is necessary.
+In this mode, SCORE Bot will record metrics on each commit, notify in the PR and/or send email to code contributors and also submit a status check. If any vulnerabilities are found, the status check will fail. This mode is useful for critical security vulnerabilities where enforcing the fix might be necessary before allowing the code to propagate in the pipeline.
 
 
 ## Setup
